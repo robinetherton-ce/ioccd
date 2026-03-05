@@ -22,7 +22,9 @@ const Image = ({ item }) => {
 
 
   return (
-    <section>
+    <section style={{ 
+      minHeight: '240px' // important for intersection observer to work
+    }}>
       {isRendered ? (
         <img src={item.Link} style={{ maxWidth: '100%', maxHeight: '100%', border: '1px solid black' }} />
       ) : null}
@@ -47,7 +49,7 @@ function App() {
     <section>
       <h1>Counterfeit Currency & Document Index</h1>
 
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: '1rem', margin: '1rem' }}>
+      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: '1rem' }}>
         {data.map((item, index) => {
           return <Image key={index} item={item} />
         })}
