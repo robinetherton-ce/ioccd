@@ -22,13 +22,13 @@ const Image = ({ item }) => {
 
 
   return (
-    <div style={{ maxHeight: '240px', width: '100%', height: '240px' }}>
+    <section>
       {isRendered ? (
-        <img src={item.Link} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <img src={item.Link} style={{ maxWidth: '100%', maxHeight: '100%', border: '1px solid black' }} />
       ) : null}
 
       <div ref={sectionRef}></div>
-    </div>
+    </section>
   )
 }
 
@@ -47,7 +47,7 @@ function App() {
     <section>
       <h1>Counterfeit Currency & Document Index</h1>
 
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
+      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: '1rem', margin: '1rem' }}>
         {data.map((item, index) => {
           return <Image key={index} item={item} />
         })}
