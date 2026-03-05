@@ -24,7 +24,7 @@ const Image = ({ item }) => {
   return (
     <div style={{ maxHeight: '240px', width: '100%', height: '240px' }}>
       {isRendered ? (
-        <img src={`${item.Folder}${item.Filename}`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <img src={item.Link} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       ) : null}
 
       <div ref={sectionRef}></div>
